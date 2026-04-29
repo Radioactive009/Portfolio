@@ -150,10 +150,22 @@ export default function Projects() {
                       <span>GitHub</span>
                     </a>
                     <span className="w-px h-4 bg-white/10" />
-                    <span className="flex items-center gap-1.5 text-xs text-white/20 cursor-not-allowed">
-                      <ExternalIcon />
-                      <span>Details on request</span>
-                    </span>
+                    {(project as any).liveUrl ? (
+                      <a
+                        href={(project as any).liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-xs text-neon-blue hover:text-white transition-colors duration-200 group/link"
+                      >
+                        <ExternalIcon />
+                        <span>Live Demo</span>
+                      </a>
+                    ) : (
+                      <span className="flex items-center gap-1.5 text-xs text-white/20 cursor-not-allowed">
+                        <ExternalIcon />
+                        <span>Details on request</span>
+                      </span>
+                    )}
                   </div>
                 </div>
               </GlassCard>
