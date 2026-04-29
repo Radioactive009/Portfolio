@@ -42,6 +42,7 @@ export const aiProjects = [
     tags: ["NLP", "Entity Recognition", "BERT", "Python"],
     description:
       "An NLP-based geopolitical intelligence platform that extracts entities, relationships, and risk signals from unstructured news and documents, enabling strategic situational awareness.",
+    liveUrl: "https://geo-intel-livid.vercel.app/",
     highlight: false,
     gradient: "from-neon-cyan/20 to-neon-blue/20",
     accentColor: "#00FFE5",
