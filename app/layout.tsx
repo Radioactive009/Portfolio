@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navigation from "@/components/Navigation";
+import GlobalBackground from "@/components/GlobalBackground";
 
 const inter = Inter({
   subsets: ["latin"],
