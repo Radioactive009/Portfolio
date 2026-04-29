@@ -26,8 +26,8 @@ export default function Home() {
     <main>
       <Hero />
       <Projects />
-      <About />
       <TechStack />
+      <About />
       <Contact />
     </main>
   );
