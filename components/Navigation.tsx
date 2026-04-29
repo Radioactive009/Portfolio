@@ -38,11 +38,11 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <button onClick={() => scrollTo("#hero")} className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center text-xs font-bold group-hover:bg-neon-blue group-hover:text-white transition-all">
+          <button onClick={() => scrollTo("#hero")} className="flex items-center gap-3 group">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-neon-blue to-neon-purple text-white flex items-center justify-center text-xs font-black shadow-lg shadow-neon-blue/20 group-hover:shadow-neon-blue/40 transition-all duration-500">
               K
             </div>
-            <span className="font-display font-bold text-white text-sm tracking-widest uppercase">
+            <span className="font-display font-black text-sm tracking-[0.3em] uppercase bg-gradient-to-r from-white to-neon-blue bg-clip-text text-transparent group-hover:from-neon-blue group-hover:to-white transition-all duration-500">
               Kislay
             </span>
           </button>
