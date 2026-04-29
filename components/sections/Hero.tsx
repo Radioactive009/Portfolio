@@ -31,24 +31,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0B0B0F]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 grid-overlay opacity-20 z-[1] pointer-events-none" />
-
-      {mounted && (
-        <div className="absolute inset-0 z-0">
-          <Canvas
-            camera={{ position: [0, 0, 8], fov: 60 }}
-            dpr={[1, 1.5]}
-            gl={{ antialias: false, alpha: true }}
-          >
-            <Suspense fallback={null}>
-              <ParticleField mouseX={mouseX} mouseY={mouseY} />
-            </Suspense>
-          </Canvas>
-        </div>
-      )}
-
+      {/* Content */}
       <div className="relative z-10 text-center px-6 mt-10">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
