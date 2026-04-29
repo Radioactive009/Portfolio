@@ -78,6 +78,7 @@ export const devProjects = [
     tags: ["Next.js", "React", "Node.js", "MongoDB"],
     description:
       "A full-stack web application delivering a premium user experience with modern architecture, real-time features, and a polished interface.",
+    liveUrl: "https://clario.codes/",
     gradient: "from-neon-blue/20 to-purple-500/20",
     accentColor: "#00D4FF",
   },
