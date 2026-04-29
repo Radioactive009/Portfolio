@@ -52,9 +52,12 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/50 hover:text-white transition-colors"
+                className="relative group py-2"
               >
-                {link.label}
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/50 group-hover:text-white transition-colors duration-300">
+                  {link.label}
+                </span>
+                <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-gradient-to-r from-neon-blue to-neon-purple scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
               </button>
             ))}
           </div>
