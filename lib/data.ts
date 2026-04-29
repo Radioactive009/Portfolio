@@ -33,6 +33,7 @@ export const aiProjects = [
     metric: "Complex Reasoning",
     description: "Self-correcting multi-agent system orchestrating structured argumentation with vector-based long-term memory.",
     highlight: true,
+    githubUrl: "https://github.com/Radioactive009/Ai-Powered-Legal-Assistant",
     liveUrl: "",
     gradient: "from-purple-500 to-neon-purple",
     accentColor: "#BD00FF",
