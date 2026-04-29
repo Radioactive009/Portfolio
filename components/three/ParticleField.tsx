@@ -14,7 +14,8 @@ export default function ParticleField({ mouseX, mouseY }: ParticleFieldProps) {
   const pointsRef = useRef<THREE.Points>(null);
   const linesRef = useRef<THREE.LineSegments>(null);
 
-  const count = 1200;
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
+  const count = isMobile ? 600 : 1200;
 
   // Generate particle positions and random velocities
   const { positions, velocities } = useMemo(() => {
