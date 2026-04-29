@@ -118,9 +118,9 @@ export default function ParticleField({ mouseX, mouseY }: ParticleFieldProps) {
         </bufferGeometry>
         <pointsMaterial
           color="#00D4FF"
-          size={0.04}
+          size={0.05}
           transparent
-          opacity={0.7}
+          opacity={0.8}
           sizeAttenuation
           depthWrite={false}
         />
@@ -130,7 +130,7 @@ export default function ParticleField({ mouseX, mouseY }: ParticleFieldProps) {
         <lineBasicMaterial
           color="#7C3AED"
           transparent
-          opacity={0.15}
+          opacity={0.25}
           depthWrite={false}
         />
       </lineSegments>
