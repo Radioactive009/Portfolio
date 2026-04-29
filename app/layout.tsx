@@ -52,6 +52,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}
     >
       <body className="bg-void text-white antialiased">
+        <GlobalBackground />
         <SmoothScroll>
           <Navigation />
           {children}
