@@ -64,11 +64,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-7xl md:text-[100px] font-display font-extrabold text-white mb-8 leading-[0.9] tracking-tighter"
+          className="text-7xl md:text-[110px] font-display font-black mb-8 leading-[0.85] tracking-tighter"
         >
-          Kislay
-          <br />
-          <span className="bg-gradient-to-r from-neon-blue via-white to-purple-400 bg-clip-text text-transparent">
+          <span className="text-neon-blue block">Kislay</span>
+          <span className="bg-gradient-to-r from-neon-blue via-white to-neon-purple bg-clip-text text-transparent">
             Kumar
           </span>
         </motion.h1>
