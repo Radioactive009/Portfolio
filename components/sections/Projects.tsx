@@ -113,9 +113,10 @@ export default function Projects() {
                     >
                       {project.category}
                     </span>
-                    {"highlight" in project && project.highlight && (
-                      <span className="text-xs text-neon-blue font-semibold tracking-widest uppercase">
-                        ★ Featured
+                    {(project as any).highlight && (
+                      <span className="text-[10px] text-neon-blue font-bold tracking-[0.3em] uppercase flex items-center gap-1.5">
+                        <span className="w-1 h-1 rounded-full bg-neon-blue animate-pulse" />
+                        Featured
                       </span>
                     )}
                   </div>
