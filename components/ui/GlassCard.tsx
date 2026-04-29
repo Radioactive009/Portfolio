@@ -1,53 +1,67 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface GlassCardProps {
   children: React.ReactNode;
   className?: string;
-  hoverGlow?: string;
-  delay?: number;
 }
 
-export default function GlassCard({
-  children,
-  className,
-  hoverGlow = "rgba(0,212,255,0.15)",
-  delay = 0,
-}: GlassCardProps) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+export default function GlassCard({ children, className }: GlassCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Smooth mouse tracking
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  // Subtle tilt (3 degrees)
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["3deg", "-3deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-3deg", "3deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{
-        duration: 0.6,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
       }}
       className={cn(
-        "relative glass rounded-2xl overflow-hidden transition-all duration-500 group cursor-default",
-        "hover:-translate-y-2 hover:shadow-card-glow",
+        "glass rounded-[1.5rem] border border-white/5 transition-all duration-300 hover:border-white/10 group",
         className
       )}
-      style={
-        {
-          "--hover-glow": hoverGlow,
-        } as React.CSSProperties
-      }
     >
-      {/* Hover glow border */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{ boxShadow: `0 0 30px ${hoverGlow}, inset 0 0 30px ${hoverGlow}20` }}
-      />
-      {/* Top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      {children}
+      <div style={{ transform: "translateZ(20px)" }} className="relative z-10">
+        {children}
+      </div>
+      
+      {/* Dynamic Glow Overlay */}
+      <div className="absolute inset-0 rounded-[1.5rem] opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-white via-transparent to-white pointer-events-none" />
     </motion.div>
   );
 }
