@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { aiSkills, engineeringSkills, toolsSkills } from "@/lib/data";
 import SkillCard from "@/components/ui/SkillCard";
-import TechCore from "@/components/three/TechCore";
 
 export default function TechStack() {
   return (
@@ -15,10 +14,6 @@ export default function TechStack() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionHeading subtitle="TOOLS OF THE TRADE" title="Technical Arsenal" />
-
-        <div className="mt-8 flex justify-center min-h-[500px]">
-          <TechCore />
-        </div>
 
         <div className="mt-16 space-y-24">
           {/* AI / ML Category */}
