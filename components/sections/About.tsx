@@ -45,41 +45,63 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left — Content */}
-          <div>
-            <SectionHeading
-              eyebrow="About Me"
-              title="Thinking in"
-              titleHighlight="Systems"
-              subtitle=""
-              className="mb-8"
-            />
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHeading subtitle="ABOUT ME" title="Thinking in Systems" />
 
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Portrait Column */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 relative group"
+          >
+            <div className="relative w-full aspect-square max-w-[450px] mx-auto lg:mx-0">
+              {/* Decorative elements */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-neon-blue/20 to-neon-purple/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
+              
+              <div className="relative h-full w-full rounded-3xl overflow-hidden border border-white/10 glass group-hover:border-neon-blue/30 transition-colors duration-500">
+                <Image
+                  src="/assets/kislay.jpg"
+                  alt="Kislay Kumar"
+                  fill
+                  className="object-cover object-center scale-110 group-hover:scale-100 transition-transform duration-700"
+                />
+                
+                {/* Glass overlay on image bottom */}
+                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-white font-display font-bold tracking-widest text-xs uppercase">
+                    Kislay Kumar
+                  </p>
+                  <p className="text-neon-blue text-[10px] font-medium tracking-widest uppercase mt-1">
+                    Bihar, India
+                  </p>
+                </div>
+              </div>
+
+              {/* Float badge */}
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -top-4 -right-4 glass px-4 py-3 rounded-2xl border border-white/10 shadow-xl"
+              >
+                <p className="text-[10px] text-white/40 uppercase tracking-tighter mb-1">Status</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[10px] font-bold text-white tracking-widest">BUILDING</span>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Text Column */}
+          <div className="lg:col-span-7 space-y-8">
             <motion.div
-              ref={ref}
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="space-y-5 text-white/55 leading-relaxed mb-10"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
             >
-              <p>
-                I&apos;m <span className="text-white font-semibold">Kislay Kumar</span>, an AI Engineer with
-                a deep obsession for turning raw, unstructured data into systems
-                that actually think — not just respond.
-              </p>
-              <p>
-                My work lives at the intersection of{" "}
-                <span className="text-neon-blue">language models</span>,{" "}
-                <span className="text-purple-400">vector databases</span>, and{" "}
-                <span className="text-neon-cyan">multi-agent orchestration</span>. I don&apos;t just call APIs — I
-                architect pipelines that understand context, retrieve knowledge,
-                reason under uncertainty, and deliver reliable intelligence.
-              </p>
-              <p>
-                Whether it&apos;s a fine-tuned RAG model, a debating agent system, or
-                a geopolitical NLP engine — I build for production, not
-                prototypes.
-              </p>
-
               {/* Philosophy quote */}
               <blockquote className="border-l-2 border-neon-blue/60 pl-5 py-1 mt-6">
                 <p className="text-white/70 italic font-light text-base">
