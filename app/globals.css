@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ───────────────────────────────────── */
+:root {
+  --void: #0B0B0F;
+  --ink: #111118;
+  --surface: #16161E;
+  --neon-blue: #00D4FF;
+  --neon-purple: #BD00FF;
+  --neon-cyan: #00FFE5;
+  --purple-400: #A855F7;
+  --purple-600: #7C3AED;
+}
+
+/* ── Reset & Base ─────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--void);
+  color: #E2E8F0;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--void);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* ── Custom Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 2px;
+}
+
+/* ── Typography ──────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: var(--font-space), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ── Glass Morphism ─────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── Glow Effects ───────────────────────────────────── */
+.glow-blue { box-shadow: 0 0 20px rgba(0,212,255,0.3), 0 0 60px rgba(0,212,255,0.1); }
+.glow-purple { box-shadow: 0 0 20px rgba(189,0,255,0.3), 0 0 60px rgba(189,0,255,0.1); }
+.glow-text-blue { text-shadow: 0 0 20px rgba(0,212,255,0.8), 0 0 60px rgba(0,212,255,0.4); }
+
+/* ── Gradient Text ──────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--neon-blue) 0%, var(--purple-400) 50%, var(--neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #fff 0%, var(--neon-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Shimmer Button ─────────────────────────────────── */
+.shimmer-btn {
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255,255,255,0.15) 50%,
+    transparent 75%
+  );
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* ── Grid Overlay ───────────────────────────────────── */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Section padding ────────────────────────────────── */
+.section-padding {
+  padding: 7rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 5rem 0;
+  }
+}
+
+/* ── Canvas container ───────────────────────────────── */
+.canvas-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── Tag / Badge ────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0,212,255,0.2);
+  color: var(--neon-blue);
+  background: rgba(0,212,255,0.07);
+}
+
+/* ── Selection ──────────────────────────────────────── */
+::selection {
+  background: rgba(0,212,255,0.25);
+  color: #fff;
+}
