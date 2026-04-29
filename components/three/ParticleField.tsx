@@ -66,10 +66,13 @@ export default function ParticleField({ mouseX, mouseY }: ParticleFieldProps) {
     }
     posAttr.needsUpdate = true;
 
-    // 2. Interaction
+    // 2. Interaction & Parallax
+    const scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
     pointsRef.current.rotation.y = mX * 0.08;
     pointsRef.current.rotation.x = -mY * 0.05;
+    pointsRef.current.position.y = scrollY * 0.001; // Subtle drift
     linesRef.current.rotation.copy(pointsRef.current.rotation);
+    linesRef.current.position.y = pointsRef.current.position.y;
 
     // 3. Update Connections
     const linePosAttr = linesRef.current.geometry.attributes.position as THREE.BufferAttribute;
