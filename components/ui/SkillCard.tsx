@@ -45,7 +45,10 @@ export default function SkillCard({ name, index, category }: SkillCardProps) {
       />
 
       {/* Main Card */}
-      <div className="relative glass-dark border border-white/5 rounded-xl p-4 flex items-center gap-4 hover:border-white/20 transition-all duration-300">
+      <div className="relative glass-dark rounded-xl p-4 flex items-center gap-4 hover:border-white/20 transition-all duration-300">
+        {/* Gloss Edge */}
+        <div className="absolute inset-0 rounded-xl border-t border-white/10 pointer-events-none" />
+        
         <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${getAccentColor()} flex items-center justify-center text-[10px] font-bold text-white shadow-lg shadow-black/20 group-hover:scale-110 transition-transform`}>
           {getIcon()}
         </div>

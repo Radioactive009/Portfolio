@@ -28,11 +28,15 @@
   }
 
   .glass {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_4px_16px_rgba(0,0,0,0.2)];
+    @apply bg-white/[0.05] backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
   }
 
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-2xl border border-white/5;
+    @apply bg-black/60 backdrop-blur-3xl border border-white/10 shadow-2xl;
+  }
+
+  .glass-card {
+    @apply relative overflow-hidden bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2rem];
   }
 
   /* Custom Scrollbar */

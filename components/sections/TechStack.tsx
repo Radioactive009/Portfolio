@@ -7,7 +7,7 @@ import SkillCard from "@/components/ui/SkillCard";
 
 export default function TechStack() {
   return (
-    <section id="skills" className="section-padding relative z-10">
+    <section id="skills" className="section-padding relative overflow-hidden">
       {/* Subtle Background Glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-purple/5 blur-[150px] pointer-events-none rounded-full" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-neon-blue/5 blur-[150px] pointer-events-none rounded-full" />
@@ -15,12 +15,12 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionHeading subtitle="TOOLS OF THE TRADE" title="Technical Arsenal" />
 
-        <div className="mt-16 space-y-24">
+        <div className="mt-16 space-y-20">
           {/* AI / ML Category */}
           <div>
-            <div className="flex items-center gap-4 mb-10">
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-neon-blue">01</span>
-              <h3 className="text-xl font-display font-bold text-white uppercase tracking-widest">AI / Machine Learning</h3>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-[10px] font-bold tracking-[0.4em] text-neon-blue">01</span>
+              <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em]">AI / Machine Learning</h3>
               <div className="h-px flex-1 bg-white/5" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -32,9 +32,9 @@ export default function TechStack() {
 
           {/* Engineering Category */}
           <div>
-            <div className="flex items-center gap-4 mb-10">
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-neon-purple">02</span>
-              <h3 className="text-xl font-display font-bold text-white uppercase tracking-widest">Core Engineering</h3>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-[10px] font-bold tracking-[0.4em] text-neon-purple">02</span>
+              <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em]">Core Engineering</h3>
               <div className="h-px flex-1 bg-white/5" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -46,9 +46,9 @@ export default function TechStack() {
 
           {/* Tools Category */}
           <div>
-            <div className="flex items-center gap-4 mb-10">
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-neon-cyan">03</span>
-              <h3 className="text-xl font-display font-bold text-white uppercase tracking-widest">Platforms & Tools</h3>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-[10px] font-bold tracking-[0.4em] text-neon-cyan">03</span>
+              <h3 className="text-sm font-bold text-white uppercase tracking-[0.2em]">Platforms & Tools</h3>
               <div className="h-px flex-1 bg-white/5" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
