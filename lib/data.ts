@@ -100,6 +100,7 @@ export const devProjects = [
     tags: ["React", "Three.js", "Node.js", "Firebase"],
     description:
       "An immersive time-based interactive web experience featuring dynamic 3D environments and fluid navigation, built for maximum visual impact.",
+    liveUrl: "https://chrono-portal.netlify.app",
     gradient: "from-neon-cyan/20 to-neon-blue/20",
     accentColor: "#00FFE5",
   },
