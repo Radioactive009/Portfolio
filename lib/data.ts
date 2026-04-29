@@ -89,6 +89,7 @@ export const devProjects = [
     tags: ["Python", "React", "REST API", "Data Viz"],
     description:
       "An infrastructure monitoring and visualization platform that gives engineering teams real-time insight into system health, performance bottlenecks, and deployment status.",
+    liveUrl: "https://infra-vision-delta.vercel.app",
     gradient: "from-purple-600/20 to-neon-cyan/20",
     accentColor: "#BD00FF",
   },
