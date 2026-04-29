@@ -1,33 +1,19 @@
-@import "tailwindcss";
-
-@theme {
-  --color-void: #020205;
-  --color-neon-blue: #00d4ff;
-  --color-neon-purple: #7c3aed;
-  --color-neon-cyan: #00ffe5;
-  
-  --font-display: var(--font-space), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
-    --section-padding: 10rem;
-    --container-max: 1400px;
-  }
-
-  @media (max-width: 768px) {
-    :root {
-      --section-padding: 6rem;
-    }
-  }
-
-  * {
-    @apply border-white/5;
+    --void: #020205;
+    --neon-blue: #00d4ff;
+    --neon-purple: #7c3aed;
+    --neon-cyan: #00ffe5;
+    --section-padding: 6rem;
   }
 
   body {
-    @apply bg-void text-white selection:bg-neon-blue/30 selection:text-white overflow-x-hidden;
+    @apply bg-[#020205] text-white selection:bg-[#00d4ff]/30 selection:text-white overflow-x-hidden;
+    font-family: var(--font-inter), sans-serif;
   }
 
   html {
@@ -42,22 +28,14 @@
   }
 
   .glass {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_4px_16px_rgba(0,0,0,0.2)];
   }
 
   .glass-dark {
     @apply bg-black/40 backdrop-blur-2xl border border-white/5;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent;
-  }
-
-  .text-neon {
-    @apply text-neon-blue drop-shadow-[0_0_10px_rgba(0,212,255,0.5)];
-  }
-
-  /* Custom Scrollbar for Premium Feel */
+  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -69,10 +47,6 @@
   ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -86,15 +60,6 @@
   50% { transform: translateY(-10px); }
 }
 
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
-}
-
 .animate-float {
   animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 8s ease-in-out infinite;
 }

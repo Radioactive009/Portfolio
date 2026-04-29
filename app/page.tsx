@@ -21,24 +21,14 @@ const TechStack = dynamic(() => import("@/components/sections/TechStack"), {
   ),
 });
 
-import ScrollSection from "@/components/ui/ScrollSection";
-
 export default function Home() {
   return (
     <main>
       <Hero />
-      <ScrollSection id="projects">
-        <Projects />
-      </ScrollSection>
-      <ScrollSection id="skills">
-        <TechStack />
-      </ScrollSection>
-      <ScrollSection id="about">
-        <About />
-      </ScrollSection>
-      <ScrollSection id="contact">
-        <Contact />
-      </ScrollSection>
+      <Projects />
+      <TechStack />
+      <About />
+      <Contact />
     </main>
   );
 }

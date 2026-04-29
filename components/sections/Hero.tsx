@@ -34,16 +34,14 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 flex flex-col items-center text-center">
+      <div className="relative z-10 text-center px-6 mt-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 text-[10px] font-bold tracking-[0.4em] uppercase text-neon-blue">
-            <span className="w-1.5 h-1.5 rounded-full bg-neon-blue animate-pulse" />
-            AI ENGINEER & ARCHITECT
+          <span className="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-[10px] font-bold tracking-[0.4em] uppercase text-white/40">
+            AI Engineer & Architect
           </span>
         </motion.div>
 
@@ -51,24 +49,25 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-display font-black leading-[0.9] tracking-tighter mb-12"
+          className="text-7xl md:text-[110px] font-display font-black mb-8 leading-[0.85] tracking-tighter"
         >
-          <span className="text-gradient">ENGINEERING</span>
-          <br />
-          <span className="bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent italic">
-            INTELLIGENCE
+          <span className="text-neon-blue block">Kislay</span>
+          <span className="bg-gradient-to-r from-neon-blue via-white to-neon-purple bg-clip-text text-transparent">
+            Kumar
           </span>
         </motion.h1>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-2xl text-lg md:text-xl text-white/50 leading-relaxed mb-16 font-light"
+          transition={{ delay: 0.4 }}
+          className="mb-14 max-w-2xl mx-auto"
         >
-          I architect production-grade AI systems that bridge the gap between 
-          <span className="text-white"> raw data </span> and 
-          <span className="text-white"> actionable intelligence.</span>
+          <p className="text-white/40 text-sm md:text-base leading-relaxed font-medium">
+            Building production-ready systems at the intersection of AI & Engineering.
+            <br />
+            Transforming unstructured data into <span className="text-neon-blue">actionable intelligence</span>.
+          </p>
         </motion.div>
 
         <motion.div
